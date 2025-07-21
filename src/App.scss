@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "./styles/LoadingScreen.scss";
+@import "./styles/_variables.scss";
+@import "./styles/_utils.scss";
+@import "./styles/PortfolioPage.scss";
+@import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+:root {
+  --base-scale: #{math.div(100, 480)}vh;
+
+  @media (max-aspect-ratio: 16/9) {
+    --base-scale: #{math.div(100, 640)}vw;
+  }
+}

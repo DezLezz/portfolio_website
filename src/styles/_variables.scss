@@ -1,0 +1,15 @@
+@mixin font-body {
+  font-family: "Quicksand", sans-serif;
+}
+
+@mixin font-heading {
+  font-family: "Space Mono", monospace;
+}
+
+$color-primary: #0a192f;
+$color-secondary: #264653;
+$color-secondary-2: #165870;
+$color-accent: #4dd0e1;
+$color-highlight: #f4a261;
+$color-light: #fdfdfd;
+$color-muted: #8892b0;

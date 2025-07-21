@@ -1,0 +1,236 @@
+@use "./utils.scss";
+@import "./_variables.scss";
+
+.portfolio {
+  position: absolute;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(225deg, #000000 0%, #2e4270 75%, #6577a1 100%);
+
+  &__profile-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: utils.scaled(215px);
+    transition: height 0.3s;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    &--projects {
+      height: utils.scaled(128px);
+    }
+  }
+
+  &__main-title {
+    position: absolute;
+    padding: utils.scaled(16px);
+    box-sizing: border-box;
+
+    span {
+      color: #ffffff;
+      @include font-heading;
+      font-size: utils.scaled(20px);
+    }
+  }
+
+  &__option-holder {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    right: 0;
+    z-index: 2;
+  }
+
+  &__option-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    border-radius: utils.scaled(20px);
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, #2e4270 0%, #6577a1 90%);
+    box-shadow: utils.scaled(5px) utils.scaled(5px) utils.scaled(5px) #000000;
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: utils.scaled(24px) utils.scaled(16px);
+    box-sizing: border-box;
+    gap: utils.scaled(16px);
+  }
+
+  &__option {
+    cursor: pointer;
+    position: relative;
+    color: white;
+
+    span {
+      font-size: 3.5rem;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    &--selected {
+      color: $color-accent !important;
+    }
+  }
+
+  &__option:hover {
+    span {
+      scale: 0.9;
+    }
+  }
+
+  &__option-tooltip {
+    position: absolute;
+    right: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #6577a1;
+    color: #fff;
+    padding: utils.scaled(4px) utils.scaled(8px);
+    border-radius: utils.scaled(4px);
+    white-space: nowrap;
+    z-index: 99;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 1);
+    font-size: utils.scaled(12px);
+  }
+
+  &__content {
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    max-width: utils.scaled(340px);
+    z-index: 1;
+    transition: max-width 0.5s, left 0.5s, opacity 0.5s;
+    padding: utils.scaled(8px);
+    background: linear-gradient(225deg, #cfddfa 0%, #e3ebfd 75%);
+    box-sizing: border-box;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px black;
+    height: utils.scaled(280px);
+
+    &--projects {
+      max-width: utils.scaled(428px);
+      left: 20%;
+    }
+  }
+
+  &__about-text {
+    text-align: left;
+
+    span {
+      @include font-body;
+      color: #000;
+      font-size: utils.scaled(10px);
+    }
+
+    a {
+      color: #6577a1;
+
+      &:hover {
+        color: $color-highlight;
+      }
+    }
+
+    &--highlight {
+      font-size: utils.scaled(16px) !important;
+    }
+  }
+
+  &__sections {
+    display: flex;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  &__section-holder {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__section-title {
+    @include font-heading;
+    color: $color-light;
+    font-size: 1.5rem;
+  }
+
+  &__section-content-holder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: utils.scaled(4px);
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  &__section-content-title {
+    @include font-heading;
+    color: #2e4270;
+    font-size: utils.scaled(12px);
+  }
+
+  &__section-content-video {
+    height: 100%;
+    box-sizing: border-box;
+    padding: utils.scaled(4px);
+  }
+
+  &__section-content-description {
+    @include font-body;
+    color: black;
+    font-size: utils.scaled(7px);
+    padding: utils.scaled(8px);
+    box-sizing: border-box;
+
+    .portfolio__link {
+      color: #6577a1;
+      text-decoration: underline;
+
+      &:hover {
+        color: $color-highlight;
+      }
+    }
+  }
+
+  .carousel {
+    height: 100%;
+
+    .slider-wrapper,
+    .slider,
+    .slide {
+      height: 100%;
+    }
+  }
+
+  .control-arrow {
+    background: #2e4270 !important;
+  }
+
+  .carousel-root {
+    width: 100%;
+  }
+}
